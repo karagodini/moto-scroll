@@ -1,0 +1,27 @@
+---
+const { pageTitle } = Astro.props;
+import '@styles/global.css';
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='./assets/favicon.webp' />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <nav class='am-navbar'>
+      <a class='section1 anchor anchor-active' href='#section1'>001</a>
+      <a class='section2 anchor' href='#section2'>002</a>
+      <a class='section3 anchor' href='#section3'>003</a>
+      <a class='section4 anchor' href='#section4'>004</a>
+    </nav>
+    <slot />
+  </body>
+
+  <script>
+    import '@scripts/script.js';
+  </script>
+</html>

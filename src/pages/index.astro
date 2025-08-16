@@ -1,0 +1,15 @@
+---
+import HeroMoto from '@components/HeroMoto.astro';
+import BentoGrid from '@components/BentoGrid.astro';
+import Layout from '@layouts/Layout.astro';
+import VideoMoto from '@components/VideoMoto.astro';
+import Footer from '@components/Footer.astro';
+const pageTitle = "Ichiban Landing"
+---
+
+<Layout pageTitle={pageTitle}>
+  <HeroMoto></HeroMoto>
+  <BentoGrid></BentoGrid>
+  <VideoMoto></VideoMoto>
+  <Footer></Footer>
+</Layout>

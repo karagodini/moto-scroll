@@ -1,0 +1,5 @@
+- **Reference / Inspiration ⬇️**
+  - [@Ichiban Landing design](https://www.ichiban.bike/)
+  - [@Akira Font](https://www.dafont.com/akira-expanded.font/)
+  - [@Ichiban Twitter](https://x.com/IchibanBike)
+  - [@Midudev Teacher Inspiration](https://www.javascript100.dev/12-moto-scroll)

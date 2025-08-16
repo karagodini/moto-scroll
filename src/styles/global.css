@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+html {
+  background-color: #000;
+}
+
+body {
+  max-width: 3000px;
+  margin-inline: auto;
+}
+
+@font-face {
+  font-family: 'Akira';
+  src: url('./assets/Akira.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #333;
+  --secondary-color: #d4d9e3;
+  --h2-font: 'Akira', 'Helvetica', sans-serif;
+
+  --banner-gradient: linear-gradient(to right, #f00, #ddd);
+  --navbar-gradient: linear-gradient(to bottom, #f00a 0%, #111a 66%);
+
+  /* Space 3xs: 3px → 4px */
+  --space-3xs: clamp(0.1875rem, 0.1658rem + 0.1087vw, 0.25rem);
+  /* Space 2xs: 6px → 8px */
+  --space-2xs: clamp(0.375rem, 0.3315rem + 0.2174vw, 0.5rem);
+  /* Space xs: 9px → 12px */
+  --space-xs: clamp(0.5625rem, 0.4973rem + 0.3261vw, 0.75rem);
+  /* Space s: 12px → 15px */
+  --space-s: clamp(0.75rem, 0.6848rem + 0.3261vw, 0.9375rem);
+  /* Space m: 18px → 24px */
+  --space-m: clamp(1.125rem, 0.9946rem + 0.6522vw, 1.5rem);
+  /* Space l: 24px → 32px */
+  --space-l: clamp(1.5rem, 1.3261rem + 0.8696vw, 2rem);
+  /* Space xl: 36px → 48px */
+  --space-xl: clamp(2.25rem, 1.9891rem + 1.3043vw, 3rem);
+  /* Space 2xl: 48px → 64px */
+  --space-2xl: clamp(3rem, 2.6522rem + 1.7391vw, 4rem);
+  /* Space 3xl: 72px → 96px */
+  --space-3xl: clamp(4.5rem, 3.9783rem + 2.6087vw, 6rem);
+  /* One-up pairs */
+  /* Space 3xs-2xs: 3px → 8px */
+  --space-3xs-2xs: clamp(0.1875rem, 0.0788rem + 0.5435vw, 0.5rem);
+  /* Space 2xs-xs: 6px → 12px */
+  --space-2xs-xs: clamp(0.375rem, 0.2446rem + 0.6522vw, 0.75rem);
+  /* Space xs-s: 9px → 16px */
+  --space-xs-s: clamp(0.5625rem, 0.4103rem + 0.7609vw, 1rem);
+  /* Space s-m: 12px → 24px */
+  --space-s-m: clamp(0.75rem, 0.4891rem + 1.3043vw, 1.5rem);
+  /* Space m-l: 18px → 32px */
+  --space-m-l: clamp(1.125rem, 0.8207rem + 1.5217vw, 2rem);
+  /* Space l-xl: 24px → 48px */
+  --space-l-xl: clamp(1.5rem, 0.9783rem + 2.6087vw, 3rem);
+  /* Space xl-2xl: 36px → 64px */
+  --space-xl-2xl: clamp(2.25rem, 1.6413rem + 3.0435vw, 4rem);
+  /* Space 2xl-3xl: 48px → 96px */
+  --space-2xl-3xl: clamp(3rem, 1.9565rem + 5.2174vw, 6rem);
+
+  /* Custom pairs */
+  /* Space s-l: 12px → 32px */
+  --space-s-l: clamp(0.75rem, 0.3152rem + 2.1739vw, 2rem);
+}
+
+.am-navbar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 40px;
+  width: 30px;
+  background-color: #0008;
+  background-image: var(--navbar-gradient);
+  border-radius: 50px;
+  z-index: 999;
+  padding: 20px;
+  gap: 4px;
+  padding-inline: 23px;
+
+  @media (width <= 1111px) and (orientation: portrait) {
+    padding-block: 23px;
+  }
+
+  &,
+  a {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    place-content: center;
+  }
+
+  .anchor {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    padding-left: 12px;
+    text-decoration: none;
+    color: #e9e9e9;
+    font-weight: 800;
+
+    font-size: var(--space-xs);
+    transition: border-color 0.4s ease;
+    box-shadow: none;
+    border-radius: 50%;
+    transition: box-shadow 0.2s linear;
+
+    &.anchor-active {
+      box-shadow: #fff8 4px 4px 6px inset, #fff8 -4px -4px 6px inset;
+    }
+  }
+
+  @media (width <= 1111px) {
+    left: 14px;
+    zoom: 0.8;
+  }
+
+  @media (width <= 600px) and (orientation: landscape) {
+    zoom: 0.4;
+  }
+
+  @media (width <= 1111px) and (orientation: portrait) {
+    left: 50%;
+    transform: translateX(-50%);
+    top: initial;
+    bottom: 25px;
+    flex-direction: row;
+    min-width: 240px;
+    height: 40px;
+  }
+
+  @media (width >= 2800px) {
+    zoom: 1.4;
+  }
+  @media (width >= 4500px) {
+    zoom: 2.4;
+  }
+}
+
+/***************************SCROLL/***************************/
+
+body {
+  --sb-track-color: #c5c5c1;
+  --sb-thumb-color: #a41f21;
+  --sb-size: 9px;
+
+  @media (width <= 500px) and (orientation: landscape) {
+    --sb-size: 4px;
+  }
+  @media (width >= 3000px) {
+    --sb-size: 20px;
+  }
+  @media (width >= 4500px) {
+    --sb-size: 30px;
+  }
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 0px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+astro-dev-toolbar {
+  display: none !important;
+}
